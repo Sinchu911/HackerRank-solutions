@@ -1,0 +1,10 @@
+Read four numbers a,b, c and d, and print the result of [a to  the power b + c to the power d]
+
+a= int(input())
+b= int(input())
+c= int(input())
+d= int(input())
+
+print(pow(a,b)+pow(c,d))
+    #  both works
+# print(a**b + c**d)
