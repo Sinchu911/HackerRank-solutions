@@ -1,0 +1,27 @@
+You are given an integer  followed by  email addresses. Your task is to print a list containing only valid email addresses in lexicographical order.
+
+
+Valid email addresses must follow these rules:
+
+It must have the username@websitename.extension format type.
+The username can only contain letters, digits, dashes and underscores .
+The website name can only have letters and digits .
+The extension can only contain letters .
+The maximum length of the extension is .
+
+
+def fun(s):
+    if s.count('@') != 1 or s.count('.') != 1:
+        return False
+    
+    username, rest = s.split('@')
+    website, extension = rest.split('.')
+    
+    if not username or not all(c.isalnum() or c in '-_' for c in username):
+        return False
+    if not website or not all(c.isalnum() for c in website):
+        return False
+    if not extension or len(extension) > 3 or not extension.isalpha():
+        return False
+    
+    return True  # return True if s is a valid email, else return False
